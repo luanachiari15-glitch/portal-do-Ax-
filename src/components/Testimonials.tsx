@@ -5,39 +5,45 @@ export const Testimonials: React.FC = () => {
   const images = [
     {
       id: 1,
-      webp: '/testimonials/depoimento-1.webp',
-      fallback: '/testimonials/depoimento-1.jpg',
-      alt: 'Depoimento 1 - Portal do Axé'
+      src: '/testimonials/depoimento-1.jpg',
+      alt: 'Depoimento 1 - Portal do Axé',
+      width: 903,
+      height: 1600
     },
     {
       id: 2,
-      webp: '/testimonials/depoimento-2.webp',
-      fallback: '/testimonials/depoimento-2.jpg',
-      alt: 'Depoimento 2 - Portal do Axé'
+      src: '/testimonials/depoimento-2.jpg',
+      alt: 'Depoimento 2 - Portal do Axé',
+      width: 1085,
+      height: 1599
     },
     {
       id: 3,
-      webp: '/testimonials/depoimento-3.webp',
-      fallback: '/testimonials/depoimento-3.jpg',
-      alt: 'Depoimento 3 - Portal do Axé'
+      src: '/testimonials/depoimento-3.jpg',
+      alt: 'Depoimento 3 - Portal do Axé',
+      width: 867,
+      height: 1599
     },
     {
       id: 4,
-      webp: '/testimonials/depoimento-4.webp',
-      fallback: '/testimonials/depoimento-4.jpg',
-      alt: 'Depoimento 4 - Portal do Axé'
+      src: '/testimonials/depoimento-4.jpg',
+      alt: 'Depoimento 4 - Portal do Axé',
+      width: 999,
+      height: 1599
     },
     {
       id: 5,
-      webp: '/testimonials/depoimento-5.webp',
-      fallback: '/testimonials/depoimento-5.jpg',
-      alt: 'Depoimento 5 - Portal do Axé'
+      src: '/testimonials/depoimento-5.jpg',
+      alt: 'Depoimento 5 - Portal do Axé',
+      width: 979,
+      height: 1599
     },
     {
       id: 6,
-      webp: '/testimonials/depoimento-6.webp',
-      fallback: '/testimonials/depoimento-6.jpg',
-      alt: 'Depoimento 6 - Portal do Axé'
+      src: '/testimonials/depoimento-6.jpg',
+      alt: 'Depoimento 6 - Portal do Axé',
+      width: 1599,
+      height: 1493
     }
   ];
 
@@ -65,7 +71,7 @@ export const Testimonials: React.FC = () => {
   useEffect(() => {
     images.forEach((imgItem) => {
       const img = new Image();
-      img.src = imgItem.webp;
+      img.src = imgItem.src;
     });
   }, []);
 
@@ -133,24 +139,15 @@ export const Testimonials: React.FC = () => {
                     : 'absolute inset-0 opacity-0 pointer-events-none z-0'
                 }`}
               >
-                <picture className="w-full flex justify-center">
-                  <source srcSet={item.webp} type="image/webp" />
-                  <img
-                    src={item.fallback}
-                    alt={item.alt}
-                    width={420}
-                    height={686}
-                    loading={index === 0 ? 'eager' : 'lazy'}
-                    decoding="async"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      if (target.src !== item.fallback) {
-                        target.src = item.fallback;
-                      }
-                    }}
-                    className="w-full max-w-[300px] min-[360px]:max-w-[340px] sm:max-w-[400px] h-auto max-h-[560px] object-contain mx-auto rounded-lg shadow-xl aspect-[420/686]"
-                  />
-                </picture>
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  width={item.width}
+                  height={item.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full max-w-[300px] min-[360px]:max-w-[340px] sm:max-w-[400px] h-auto max-h-[560px] object-contain mx-auto rounded-lg shadow-xl"
+                />
               </div>
             ))}
           </div>

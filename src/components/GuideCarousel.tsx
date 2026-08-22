@@ -5,32 +5,27 @@ export const GuideCarousel: React.FC = () => {
   const slides = [
     {
       id: 1,
-      webp: '/guide-preview/preview-1.webp',
-      fallback: '/guide-preview/preview-1.jpg',
+      src: '/guide-preview/preview-1.jpg',
       alt: 'Página do Guia Portal do Axé 1'
     },
     {
       id: 2,
-      webp: '/guide-preview/preview-2.webp',
-      fallback: '/guide-preview/preview-2.jpg',
+      src: '/guide-preview/preview-2.jpg',
       alt: 'Página do Guia Portal do Axé 2'
     },
     {
       id: 3,
-      webp: '/guide-preview/preview-3.webp',
-      fallback: '/guide-preview/preview-3.jpg',
+      src: '/guide-preview/preview-3.jpg',
       alt: 'Página do Guia Portal do Axé 3'
     },
     {
       id: 4,
-      webp: '/guide-preview/preview-4.webp',
-      fallback: '/guide-preview/preview-4.jpg',
+      src: '/guide-preview/preview-4.jpg',
       alt: 'Página do Guia Portal do Axé 4'
     },
     {
       id: 5,
-      webp: '/guide-preview/preview-5.webp',
-      fallback: '/guide-preview/preview-5.jpg',
+      src: '/guide-preview/preview-5.jpg',
       alt: 'Página do Guia Portal do Axé 5'
     }
   ];
@@ -75,7 +70,7 @@ export const GuideCarousel: React.FC = () => {
   useEffect(() => {
     slides.forEach((slide) => {
       const img = new Image();
-      img.src = slide.webp;
+      img.src = slide.src;
     });
   }, []);
 
@@ -101,24 +96,15 @@ export const GuideCarousel: React.FC = () => {
                 : 'absolute inset-0 opacity-0 pointer-events-none z-0'
             }`}
           >
-            <picture className="w-full flex justify-center">
-              <source srcSet={item.webp} type="image/webp" />
-              <img
-                src={item.fallback}
-                alt={item.alt}
-                width={420}
-                height={594}
-                loading={index === 0 ? 'eager' : 'lazy'}
-                decoding="async"
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  if (target.src !== item.fallback) {
-                    target.src = item.fallback;
-                  }
-                }}
-                className="w-full max-w-[290px] min-[360px]:max-w-[320px] sm:max-w-[340px] h-auto max-h-[460px] object-contain mx-auto rounded-lg shadow-[0_15px_35px_rgba(0,0,0,0.8)] aspect-[420/594]"
-              />
-            </picture>
+            <img
+              src={item.src}
+              alt={item.alt}
+              width={1413}
+              height={2000}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+              className="w-full max-w-[290px] min-[360px]:max-w-[320px] sm:max-w-[340px] h-auto max-h-[460px] object-contain mx-auto rounded-lg shadow-[0_15px_35px_rgba(0,0,0,0.8)] aspect-[1413/2000]"
+            />
           </div>
         ))}
       </div>
