@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', serif;
+    --font-garamond: 'Cormorant Garamond', serif;
+    --font-montserrat: 'Montserrat', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-montserrat);
+    background-color: #050101;
+    color: #F8F0E9;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-cinzel);
+  }
+
+  .font-quote, .font-subhead {
+    font-family: var(--font-garamond);
+  }
+}
+
+/* Custom Metallic Gold & Ruby Utilities */
+.gold-text {
+  color: #D4A43E;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F3D37A 0%, #D4A43E 40%, #FFE89E 70%, #8B641D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ruby-gradient-text {
+  background: linear-gradient(135deg, #FF385C 0%, #C70028 40%, #810018 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Capsule CTA Button Style */
+.btn-capsule-ruby {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #E0002F 0%, #C70028 45%, #810018 100%);
+  color: #FFFFFF;
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  border: 1px solid #D4A43E;
+  box-shadow: 0 4px 25px rgba(199, 0, 40, 0.45), 0 0 15px rgba(212, 164, 62, 0.25), inset 0 1px 1px rgba(255, 235, 180, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-capsule-ruby::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 235, 170, 0.35), transparent);
+  transform: skewX(-25deg);
+  animation: shine 4s infinite ease-in-out;
+}
+
+.btn-capsule-ruby:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(135deg, #FF1A48 0%, #D6002E 45%, #9E0020 100%);
+  box-shadow: 0 8px 35px rgba(199, 0, 40, 0.7), 0 0 25px rgba(212, 164, 62, 0.45), inset 0 1px 2px rgba(255, 245, 200, 0.6);
+}
+
+.btn-capsule-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgba(17, 3, 5, 0.8);
+  color: #F8F0E9;
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  border: 1px solid #D4A43E;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(212, 164, 62, 0.15);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-capsule-outline:hover {
+  transform: translateY(-2px);
+  background: rgba(53, 0, 9, 0.9);
+  border-color: #F3D37A;
+  box-shadow: 0 6px 25px rgba(129, 0, 24, 0.4), 0 0 15px rgba(212, 164, 62, 0.3);
+}
+
+@keyframes shine {
+  0% { left: -120%; }
+  35%, 100% { left: 180%; }
+}
+
+/* Card presets */
+.axe-card {
+  background: #110305;
+  border: 1px solid rgba(212, 164, 62, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px -5px rgba(129, 0, 24, 0.15);
+  transition: all 0.3s ease;
+}
+
+.axe-card:hover {
+  border-color: rgba(212, 164, 62, 0.55);
+  box-shadow: 0 15px 35px -10px rgba(129, 0, 24, 0.35), 0 0 25px -5px rgba(212, 164, 62, 0.2);
+}
+
+.axe-card-wine {
+  background: linear-gradient(180deg, #350009 0%, #110305 100%);
+  border: 1px solid rgba(212, 164, 62, 0.35);
+  border-radius: 12px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050101;
+}
+::-webkit-scrollbar-thumb {
+  background: #350009;
+  border: 1px solid #8B641D;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #810018;
+}

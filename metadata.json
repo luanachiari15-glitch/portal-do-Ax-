@@ -1,0 +1,6 @@
+{
+  "name": "Portal do Axé",
+  "description": "Landing page mística e de alta conversão para o Portal do Axé - Perfumes Encantados e Práticas Ritualísticas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
