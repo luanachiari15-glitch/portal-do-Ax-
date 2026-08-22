@@ -97,7 +97,7 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
           className="w-full py-4 rounded-xl btn-gold font-serif text-base sm:text-lg font-bold tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer shadow-2xl mb-3"
         >
           <Sparkles className="w-5 h-5 text-[#1a080c]" />
-          <span>SIM! QUERO DESBLOQUEAR A VERSÃO COMPLETA</span>
+          <span>COMPRAR AGORA</span>
         </button>
 
         {/* Secondary Decline to Essential Option */}

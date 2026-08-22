@@ -125,9 +125,9 @@ export const Offers: React.FC<OffersProps> = ({
               <button
                 id="select-essential-btn"
                 onClick={onSelectEssential}
-                className="btn-capsule-outline py-3.5 px-6 text-sm sm:text-base w-full cursor-pointer"
+                className="btn-capsule-outline py-3.5 px-6 text-sm sm:text-base w-full cursor-pointer font-bold tracking-wider uppercase"
               >
-                QUERO POR R$ 9,90
+                COMPRAR AGORA
               </button>
             </div>
           </div>
@@ -207,9 +207,9 @@ export const Offers: React.FC<OffersProps> = ({
               <button
                 id="select-complete-btn"
                 onClick={handleCompleteClick}
-                className="btn-capsule-ruby py-4 px-8 text-base sm:text-lg w-full cursor-pointer"
+                className="btn-capsule-ruby py-4 px-8 text-base sm:text-lg w-full cursor-pointer font-bold tracking-wider uppercase"
               >
-                QUERO O PORTAL COMPLETO
+                COMPRAR AGORA
               </button>
             </div>
 

@@ -32,6 +32,14 @@ export default function App() {
   };
 
   const handleSelectComplete = () => {
+    // Rastreia InitiateCheckout no Meta Pixel
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout', {
+        content_name: 'Guia Completo + 3 Bônus',
+        value: 27.00,
+        currency: 'BRL'
+      });
+    }
     // Redireciona diretamente para o checkout da oferta de R$ 27,00
     window.location.href = 'https://pay.cakto.com.br/ye7dopx_1051731';
   };

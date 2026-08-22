@@ -13,10 +13,24 @@ export const DiscountPopupModal: React.FC<DiscountPopupModalProps> = ({
   if (!isOpen) return null;
 
   const handleUpgrade17 = () => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout', {
+        content_name: 'Oferta Especial Completa Pop-up',
+        value: 17.00,
+        currency: 'BRL'
+      });
+    }
     window.location.href = 'https://pay.cakto.com.br/rig2y73';
   };
 
   const handleBasic990 = () => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout', {
+        content_name: 'Guia Essencial',
+        value: 9.90,
+        currency: 'BRL'
+      });
+    }
     window.location.href = 'https://pay.cakto.com.br/46phhwc_1051747';
   };
 
@@ -108,7 +122,7 @@ export const DiscountPopupModal: React.FC<DiscountPopupModalProps> = ({
           className="btn-capsule-ruby w-full py-3 sm:py-3.5 px-4 sm:px-6 text-sm sm:text-base font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-[0_10px_30px_rgba(199,0,40,0.6)] hover:shadow-[0_15px_40px_rgba(199,0,40,0.8)] transition-all mb-2 sm:mb-2.5"
         >
           <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[#FFE89E]" />
-          <span>QUERO O COMPLETO POR R$ 17,00</span>
+          <span>COMPRAR AGORA</span>
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
 
