@@ -18,7 +18,7 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm sm:backdrop-blur-md animate-fade-in overflow-y-auto">
       <div className="relative w-full max-w-lg my-8 rounded-3xl p-6 sm:p-8 bg-gradient-to-b from-[#240816] via-[#15040d] to-[#0a0206] border-2 border-[#ffd875] shadow-[0_0_50px_rgba(201,24,74,0.4)] text-center">
         
         {/* Close Icon */}

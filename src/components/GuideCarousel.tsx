@@ -66,14 +66,6 @@ export const GuideCarousel: React.FC = () => {
     touchStartX.current = null;
   };
 
-  // Preload all slides in background for instant responsiveness
-  useEffect(() => {
-    slides.forEach((slide) => {
-      const img = new Image();
-      img.src = slide.src;
-    });
-  }, []);
-
   return (
     <div 
       className="relative w-full max-w-[340px] sm:max-w-[380px] mx-auto select-none touch-pan-y"
@@ -83,31 +75,39 @@ export const GuideCarousel: React.FC = () => {
       onTouchEnd={handleTouchEnd}
     >
       {/* Background Subtle Accent */}
-      <div className="absolute inset-0 bg-[#810018]/20 rounded-full blur-[25px] sm:blur-[70px] -z-10 pointer-events-none transform-gpu" />
+      <div className="absolute inset-0 bg-[#810018]/20 rounded-full blur-[24px] sm:blur-[70px] -z-10 pointer-events-none transform-gpu" />
 
       {/* Pure Image Display */}
       <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[440px] w-full contain-paint">
-        {slides.map((item, index) => (
-          <div
-            key={item.id}
-            className={`transition-opacity duration-300 w-full flex items-center justify-center will-change-[opacity] ${
-              index === currentIndex
-                ? 'relative opacity-100 z-10 pointer-events-auto'
-                : 'absolute inset-0 opacity-0 pointer-events-none z-0'
-            }`}
-          >
-            <img
-              src={item.src}
-              alt={item.alt}
-              width={1413}
-              height={2000}
-              loading={index === 0 ? 'eager' : 'lazy'}
-              decoding="async"
-              referrerPolicy="no-referrer"
-              className="block w-full max-w-[290px] min-[360px]:max-w-[320px] sm:max-w-[340px] h-auto max-h-[460px] object-contain mx-auto rounded-lg shadow-[0_15px_35px_rgba(0,0,0,0.8)] aspect-[1413/2000]"
-            />
-          </div>
-        ))}
+        {slides.map((item, index) => {
+          const isCurrent = index === currentIndex;
+          const isAdjacent = index === (currentIndex + 1) % slides.length || index === (currentIndex - 1 + slides.length) % slides.length;
+          
+          return (
+            <div
+              key={item.id}
+              className={`transition-opacity duration-300 w-full flex items-center justify-center ${
+                isCurrent
+                  ? 'relative opacity-100 z-10 pointer-events-auto'
+                  : 'absolute inset-0 opacity-0 pointer-events-none z-0'
+              }`}
+            >
+              {(isCurrent || isAdjacent) && (
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  width={1413}
+                  height={2000}
+                  loading="lazy"
+                  fetchPriority="low"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className="block w-full max-w-[290px] min-[360px]:max-w-[320px] sm:max-w-[340px] h-auto max-h-[460px] object-contain mx-auto rounded-lg shadow-[0_15px_35px_rgba(0,0,0,0.8)] aspect-[1413/2000]"
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
 
       {/* Navigation Arrows */}

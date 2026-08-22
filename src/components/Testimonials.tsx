@@ -92,10 +92,13 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-24 bg-[#050101] text-center border-t border-[#D4A43E]/20 overflow-hidden">
+    <section 
+      className="relative py-16 md:py-24 bg-[#050101] text-center border-t border-[#D4A43E]/20 overflow-hidden lazy-section"
+      style={{ containIntrinsicSize: '1px 700px' }}
+    >
       {/* Background Subtle Accent */}
       <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[250px] sm:h-[400px] rounded-full blur-[35px] sm:blur-[90px] md:blur-[140px] opacity-20 pointer-events-none -z-10"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[250px] sm:h-[400px] rounded-full blur-[24px] sm:blur-[90px] md:blur-[140px] opacity-20 pointer-events-none -z-10"
         style={{ background: 'radial-gradient(circle, #810018 0%, transparent 70%)' }}
       />
 
@@ -130,27 +133,35 @@ export const Testimonials: React.FC = () => {
         >
           {/* Pure Image Display */}
           <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[460px] w-full contain-paint">
-            {images.map((item, index) => (
-              <div
-                key={item.id}
-                className={`transition-opacity duration-300 w-full flex items-center justify-center will-change-[opacity] ${
-                  index === currentIndex
-                    ? 'relative opacity-100 z-10 pointer-events-auto'
-                    : 'absolute inset-0 opacity-0 pointer-events-none z-0'
-                }`}
-              >
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  width={item.width}
-                  height={item.height}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  decoding="async"
-                  referrerPolicy="no-referrer"
-                  className="block w-full max-w-[300px] min-[360px]:max-w-[340px] sm:max-w-[400px] h-auto max-h-[560px] object-contain mx-auto rounded-lg shadow-xl"
-                />
-              </div>
-            ))}
+            {images.map((item, index) => {
+              const isCurrent = index === currentIndex;
+              const isAdjacent = index === (currentIndex + 1) % images.length || index === (currentIndex - 1 + images.length) % images.length;
+
+              return (
+                <div
+                  key={item.id}
+                  className={`transition-opacity duration-300 w-full flex items-center justify-center ${
+                    isCurrent
+                      ? 'relative opacity-100 z-10 pointer-events-auto'
+                      : 'absolute inset-0 opacity-0 pointer-events-none z-0'
+                  }`}
+                >
+                  {(isCurrent || isAdjacent) && (
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      width={item.width}
+                      height={item.height}
+                      loading="lazy"
+                      fetchPriority="low"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      className="block w-full max-w-[300px] min-[360px]:max-w-[340px] sm:max-w-[400px] h-auto max-h-[560px] object-contain mx-auto rounded-lg shadow-xl"
+                    />
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Navigation Arrows */}

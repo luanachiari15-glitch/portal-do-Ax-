@@ -33,14 +33,15 @@ export const Offers: React.FC<OffersProps> = ({
   return (
     <section 
       id="ofertas" 
-      className="relative py-20 md:py-32 overflow-hidden text-center scroll-mt-6"
+      className="relative py-20 md:py-32 overflow-hidden text-center scroll-mt-6 lazy-section"
       style={{
-        background: 'linear-gradient(180deg, #050101 0%, #1a0307 40%, #350009 70%, #050101 100%)'
+        background: 'linear-gradient(180deg, #050101 0%, #1a0307 40%, #350009 70%, #050101 100%)',
+        containIntrinsicSize: '1px 900px'
       }}
     >
       {/* Background radial glow */}
       <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[800px] h-[300px] sm:h-[600px] rounded-full blur-[35px] sm:blur-[90px] md:blur-[160px] opacity-35 pointer-events-none -z-10"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[800px] h-[300px] sm:h-[600px] rounded-full blur-[24px] sm:blur-[90px] md:blur-[160px] opacity-35 pointer-events-none -z-10"
         style={{ background: 'radial-gradient(circle, #810018 0%, #350009 50%, transparent 75%)' }}
       />
 

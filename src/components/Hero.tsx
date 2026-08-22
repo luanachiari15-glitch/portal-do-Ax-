@@ -13,7 +13,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
       {/* Background Deep Ruby Gradient Accent */}
       <div 
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] sm:w-[650px] md:w-[900px] h-[300px] sm:h-[450px] rounded-full blur-[35px] sm:blur-[90px] md:blur-[140px] opacity-40 pointer-events-none -z-10"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] sm:w-[650px] md:w-[900px] h-[300px] sm:h-[450px] rounded-full blur-[24px] sm:blur-[90px] md:blur-[140px] opacity-40 pointer-events-none -z-10"
         style={{ background: 'radial-gradient(circle, #810018 0%, #350009 50%, transparent 80%)' }}
       />
 
@@ -36,10 +36,10 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         <div className="my-8 flex justify-center items-center bg-transparent">
           <div className="w-full max-w-[340px] min-[400px]:max-w-[380px] sm:max-w-[460px] md:max-w-[500px] mx-auto bg-transparent">
             <img
-              src="https://i.ibb.co/Q7Bf4T56/Chat-GPT-Image-22-de-ago-de-2026-18-01-43.png"
+              src="https://i.ibb.co/JWLK9Ghz/Chat-GPT-Image-22-de-ago-de-2026-18-01-43.png"
               alt="Portal do Axé — perfumes e práticas ritualísticas"
-              width="1312"
-              height="1199"
+              width="640"
+              height="585"
               loading="eager"
               fetchPriority="high"
               decoding="async"
@@ -55,7 +55,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         </p>
 
         {/* Destaque */}
-        <div className="inline-block py-2 px-5 sm:px-8 rounded-full border border-[#D4A43E]/40 bg-[#110305]/80 backdrop-blur-md mb-8 shadow-[0_0_15px_rgba(212,164,62,0.15)]">
+        <div className="inline-block py-2 px-5 sm:px-8 rounded-full border border-[#D4A43E]/40 bg-[#110305]/80 backdrop-blur-sm sm:backdrop-blur-md mb-8 shadow-[0_0_15px_rgba(212,164,62,0.15)]">
           <p className="font-sans text-xs sm:text-sm md:text-base font-semibold tracking-wider text-[#D4A43E] uppercase">
             🌙 LUA &nbsp;•&nbsp; 🌿 ERVAS &nbsp;•&nbsp; 🕯️ RITUAL &nbsp;•&nbsp; ✨ AXÉ
           </p>

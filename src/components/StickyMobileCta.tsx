@@ -25,7 +25,7 @@ export const StickyMobileCta: React.FC<StickyMobileCtaProps> = ({ onCtaClick }) 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-[#11030b]/95 border-t border-[#ffd875]/40 backdrop-blur-lg sm:hidden animate-fade-in shadow-2xl">
+    <div className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-[#11030b]/95 border-t border-[#ffd875]/40 backdrop-blur-sm sm:backdrop-blur-md sm:hidden animate-fade-in shadow-2xl">
       <div className="flex items-center justify-between gap-3 max-w-md mx-auto">
         <div className="text-left leading-tight pl-1">
           <span className="text-[10px] uppercase tracking-wider font-bold text-[#ffd875] block">

@@ -9,14 +9,15 @@ export const GuaranteeAndFinalCta: React.FC<GuaranteeAndFinalCtaProps> = ({
 }) => {
   return (
     <section 
-      className="relative py-20 md:py-28 text-center overflow-hidden"
+      className="relative py-20 md:py-28 text-center overflow-hidden lazy-section"
       style={{
-        background: 'linear-gradient(180deg, #050101 0%, #350009 50%, #050101 100%)'
+        background: 'linear-gradient(180deg, #050101 0%, #350009 50%, #050101 100%)',
+        containIntrinsicSize: '1px 500px'
       }}
     >
       {/* Ruby ambient glow */}
       <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[250px] sm:h-[400px] rounded-full blur-[35px] sm:blur-[90px] md:blur-[140px] opacity-40 pointer-events-none -z-10"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[250px] sm:h-[400px] rounded-full blur-[24px] sm:blur-[90px] md:blur-[140px] opacity-40 pointer-events-none -z-10"
         style={{ background: 'radial-gradient(circle, #810018 0%, transparent 75%)' }}
       />
 

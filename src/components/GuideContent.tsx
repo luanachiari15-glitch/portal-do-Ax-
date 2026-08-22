@@ -50,7 +50,10 @@ export const GuideContent: React.FC<GuideContentProps> = ({ onCtaClick }) => {
   ];
 
   return (
-    <section className="relative py-20 md:py-28 bg-[#050101] text-center border-t border-[#D4A43E]/20">
+    <section 
+      className="relative py-20 md:py-28 bg-[#050101] text-center border-t border-[#D4A43E]/20 lazy-section"
+      style={{ containIntrinsicSize: '1px 800px' }}
+    >
       <div className="max-w-[1150px] mx-auto px-4 sm:px-6">
         
         {/* Section Heading */}

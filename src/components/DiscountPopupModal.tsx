@@ -36,7 +36,7 @@ export const DiscountPopupModal: React.FC<DiscountPopupModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md overflow-y-auto animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-sm sm:backdrop-blur-md overflow-y-auto animate-fade-in"
       onClick={onClose}
     >
       <div 
@@ -47,8 +47,8 @@ export const DiscountPopupModal: React.FC<DiscountPopupModalProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Ambient background glow */}
-        <div className="absolute -top-24 -right-24 w-60 h-60 bg-[#C70028]/30 rounded-full blur-[25px] sm:blur-[70px] pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-60 h-60 bg-[#D4A43E]/20 rounded-full blur-[25px] sm:blur-[70px] pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-60 h-60 bg-[#C70028]/30 rounded-full blur-[24px] sm:blur-[70px] pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-60 h-60 bg-[#D4A43E]/20 rounded-full blur-[24px] sm:blur-[70px] pointer-events-none" />
 
         {/* Close Button */}
         <button

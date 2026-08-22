@@ -20,7 +20,10 @@ export const ConsultationMaterial: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-16 md:py-24 bg-[#050101]">
+    <section 
+      className="relative py-16 md:py-24 bg-[#050101] lazy-section"
+      style={{ containIntrinsicSize: '1px 500px' }}
+    >
       <div className="max-w-[1150px] mx-auto px-4 sm:px-6">
         
         {/* Big Horizontal Card with Gold Border */}
@@ -32,7 +35,7 @@ export const ConsultationMaterial: React.FC = () => {
         >
           {/* Subtle Ruby Glow inside card */}
           <div 
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-[280px] sm:w-[600px] h-[160px] sm:h-[200px] rounded-full blur-[30px] sm:blur-[90px] opacity-35 pointer-events-none"
+            className="absolute top-0 left-1/2 -translate-x-1/2 w-[280px] sm:w-[600px] h-[160px] sm:h-[200px] rounded-full blur-[24px] sm:blur-[90px] opacity-35 pointer-events-none"
             style={{ background: 'radial-gradient(circle, #810018 0%, transparent 70%)' }}
           />
 

@@ -39,7 +39,10 @@ export const Faq: React.FC = () => {
   };
 
   return (
-    <section className="relative py-20 md:py-28 bg-[#050101] text-center border-t border-[#D4A43E]/20">
+    <section 
+      className="relative py-20 md:py-28 bg-[#050101] text-center border-t border-[#D4A43E]/20 lazy-section"
+      style={{ containIntrinsicSize: '1px 600px' }}
+    >
       <div className="max-w-[680px] mx-auto px-4 sm:px-6">
         
         {/* Section Heading */}

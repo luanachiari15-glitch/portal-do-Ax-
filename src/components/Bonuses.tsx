@@ -35,14 +35,16 @@ export const Bonuses: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden text-center"
+    <section 
+      className="relative py-20 md:py-28 overflow-hidden text-center lazy-section"
       style={{
-        background: 'linear-gradient(180deg, #050101 0%, #1a0307 35%, #350009 60%, #050101 100%)'
+        background: 'linear-gradient(180deg, #050101 0%, #1a0307 35%, #350009 60%, #050101 100%)',
+        containIntrinsicSize: '1px 800px'
       }}
     >
       {/* Background radial glow */}
       <div 
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[320px] sm:w-[700px] h-[300px] sm:h-[500px] rounded-full blur-[35px] sm:blur-[90px] md:blur-[140px] opacity-35 pointer-events-none -z-10"
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[320px] sm:w-[700px] h-[300px] sm:h-[500px] rounded-full blur-[24px] sm:blur-[90px] md:blur-[140px] opacity-35 pointer-events-none -z-10"
         style={{ background: 'radial-gradient(circle, #810018 0%, transparent 75%)' }}
       />
 
