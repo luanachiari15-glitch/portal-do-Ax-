@@ -123,15 +123,17 @@ export const Testimonials: React.FC = () => {
           onTouchEnd={handleTouchEnd}
         >
           {/* Pure Image Display */}
-          <div className="flex items-center justify-center min-h-[380px] sm:min-h-[460px]">
+          <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[460px] w-full">
             {images.map((item, index) => (
               <div
                 key={item.id}
                 className={`transition-opacity duration-300 w-full flex items-center justify-center ${
-                  index === currentIndex ? 'block opacity-100' : 'hidden opacity-0'
+                  index === currentIndex
+                    ? 'relative opacity-100 z-10 pointer-events-auto'
+                    : 'absolute inset-0 opacity-0 pointer-events-none z-0'
                 }`}
               >
-                <picture>
+                <picture className="w-full flex justify-center">
                   <source srcSet={item.webp} type="image/webp" />
                   <img
                     src={item.fallback}
@@ -140,7 +142,13 @@ export const Testimonials: React.FC = () => {
                     height={520}
                     loading={index === 0 ? 'eager' : 'lazy'}
                     decoding="async"
-                    className="w-full max-w-[340px] sm:max-w-[400px] h-auto max-h-[560px] object-contain mx-auto rounded-lg shadow-xl aspect-[380/520]"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (target.src !== item.fallback) {
+                        target.src = item.fallback;
+                      }
+                    }}
+                    className="w-full max-w-[300px] min-[360px]:max-w-[340px] sm:max-w-[400px] h-auto max-h-[560px] object-contain mx-auto rounded-lg shadow-xl aspect-[380/520]"
                   />
                 </picture>
               </div>
@@ -151,17 +159,17 @@ export const Testimonials: React.FC = () => {
           <button
             onClick={prevSlide}
             aria-label="Foto anterior"
-            className="absolute -left-3 sm:-left-7 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#110305]/90 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer z-20 focus:outline-none"
+            className="absolute -left-2 sm:-left-7 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-[#110305]/95 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer z-20 focus:outline-none"
           >
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
           </button>
 
           <button
             onClick={nextSlide}
             aria-label="Próxima foto"
-            className="absolute -right-3 sm:-right-7 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#110305]/90 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer z-20 focus:outline-none"
+            className="absolute -right-2 sm:-right-7 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-[#110305]/95 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer z-20 focus:outline-none"
           >
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
           </button>
 
           {/* Pagination Indicators */}

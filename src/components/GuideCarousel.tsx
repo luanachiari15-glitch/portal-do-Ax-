@@ -91,15 +91,17 @@ export const GuideCarousel: React.FC = () => {
       <div className="absolute inset-0 bg-[#810018]/20 rounded-full blur-[70px] -z-10 pointer-events-none" />
 
       {/* Pure Image Display */}
-      <div className="flex items-center justify-center min-h-[380px] sm:min-h-[440px]">
+      <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[440px] w-full">
         {slides.map((item, index) => (
           <div
             key={item.id}
             className={`transition-opacity duration-300 w-full flex items-center justify-center ${
-              index === currentIndex ? 'block opacity-100' : 'hidden opacity-0'
+              index === currentIndex
+                ? 'relative opacity-100 z-10 pointer-events-auto'
+                : 'absolute inset-0 opacity-0 pointer-events-none z-0'
             }`}
           >
-            <picture>
+            <picture className="w-full flex justify-center">
               <source srcSet={item.webp} type="image/webp" />
               <img
                 src={item.fallback}
@@ -108,7 +110,13 @@ export const GuideCarousel: React.FC = () => {
                 height={480}
                 loading={index === 0 ? 'eager' : 'lazy'}
                 decoding="async"
-                className="w-full max-w-[300px] sm:max-w-[340px] h-auto max-h-[460px] object-contain mx-auto rounded-lg shadow-[0_15px_35px_rgba(0,0,0,0.8)] aspect-[340/480]"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== item.fallback) {
+                    target.src = item.fallback;
+                  }
+                }}
+                className="w-full max-w-[290px] min-[360px]:max-w-[320px] sm:max-w-[340px] h-auto max-h-[460px] object-contain mx-auto rounded-lg shadow-[0_15px_35px_rgba(0,0,0,0.8)] aspect-[340/480]"
               />
             </picture>
           </div>
@@ -119,7 +127,7 @@ export const GuideCarousel: React.FC = () => {
       <button
         onClick={prevSlide}
         aria-label="Página anterior"
-        className="absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#110305]/90 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer z-20 focus:outline-none"
+        className="absolute -left-2 sm:-left-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#110305]/95 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer z-20 focus:outline-none"
       >
         <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
@@ -127,7 +135,7 @@ export const GuideCarousel: React.FC = () => {
       <button
         onClick={nextSlide}
         aria-label="Próxima página"
-        className="absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#110305]/90 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer z-20 focus:outline-none"
+        className="absolute -right-2 sm:-right-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#110305]/95 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer z-20 focus:outline-none"
       >
         <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>

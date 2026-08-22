@@ -61,7 +61,7 @@ export const Offers: React.FC<OffersProps> = ({
           
           {/* CARD 1 — ESSENCIAL (order-2 on mobile, order-1 on desktop) */}
           <div 
-            className="w-full lg:w-[45%] order-2 lg:order-1 axe-card p-5 sm:p-8 flex flex-col justify-between text-left border border-[#D4A43E]/30 relative rounded-2xl"
+            className="w-full max-w-[480px] lg:max-w-none lg:w-[45%] order-2 lg:order-1 axe-card p-5 sm:p-8 flex flex-col justify-between text-left border border-[#D4A43E]/30 relative rounded-2xl mx-auto lg:mx-0"
             style={{
               background: 'linear-gradient(180deg, #110305 0%, #0a0203 100%)'
             }}
@@ -134,7 +134,7 @@ export const Offers: React.FC<OffersProps> = ({
 
           {/* CARD 2 — COMPLETO (order-1 on mobile, order-2 on desktop, larger and dominant) */}
           <div 
-            className="w-full lg:w-[55%] order-1 lg:order-2 rounded-2xl p-5 sm:p-9 flex flex-col justify-between text-left relative z-10 border-2 border-[#D4A43E] shadow-[0_20px_50px_rgba(129,0,24,0.4),0_0_30px_rgba(212,164,62,0.3)] transform lg:-translate-y-2"
+            className="w-full max-w-[520px] lg:max-w-none lg:w-[55%] order-1 lg:order-2 rounded-2xl p-5 sm:p-9 flex flex-col justify-between text-left relative z-10 border-2 border-[#D4A43E] shadow-[0_20px_50px_rgba(129,0,24,0.4),0_0_30px_rgba(212,164,62,0.3)] transform lg:-translate-y-2 mx-auto lg:mx-0"
             style={{
               background: 'linear-gradient(180deg, #350009 0%, #1f0307 40%, #110305 100%)'
             }}

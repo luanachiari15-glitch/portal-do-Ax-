@@ -21,7 +21,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
       <div className="max-w-[1150px] mx-auto px-4 sm:px-6 pt-10 sm:pt-14">
         
         {/* Headline */}
-        <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold tracking-tight text-[#F8F0E9] uppercase leading-[1.15] max-w-4xl mx-auto mb-6">
+        <h1 className="font-heading text-2xl min-[360px]:text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold tracking-tight text-[#F8F0E9] uppercase leading-[1.15] max-w-4xl mx-auto mb-6">
           NÃO É SÓ UM PERFUME.<br />
           <span className="text-[#D4A43E] gold-gradient-text">É A </span>
           <span className="text-[#C70028] ruby-gradient-text drop-shadow-[0_0_20px_rgba(199,0,40,0.6)]">INTENÇÃO</span>

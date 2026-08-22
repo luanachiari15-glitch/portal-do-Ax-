@@ -26,7 +26,7 @@ export const DiscountPopupModal: React.FC<DiscountPopupModalProps> = ({
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-[460px] sm:max-w-lg my-auto max-h-[94vh] overflow-y-auto rounded-2xl p-4 sm:p-7 border-2 border-[#D4A43E] text-left shadow-[0_25px_60px_rgba(0,0,0,0.95),0_0_40px_rgba(199,0,40,0.4)]"
+        className="relative w-full max-w-[calc(100vw-24px)] sm:max-w-lg my-auto max-h-[92dvh] overflow-y-auto rounded-2xl p-4 sm:p-7 border-2 border-[#D4A43E] text-left shadow-[0_25px_60px_rgba(0,0,0,0.95),0_0_40px_rgba(199,0,40,0.4)]"
         style={{
           background: 'linear-gradient(180deg, #350009 0%, #1a0307 40%, #0d0103 100%)'
         }}
