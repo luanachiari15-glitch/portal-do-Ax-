@@ -22,7 +22,7 @@ export const TopGoldenBanner: React.FC = () => {
     >
       {/* Light sheen animation over metallic bar */}
       <div 
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent opacity-60 pointer-events-none -skew-x-12 animate-[shine_5s_infinite_linear]"
+        className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/35 to-transparent opacity-60 pointer-events-none animate-[bannerSheen_5s_infinite_linear]"
       />
 
       <div className="max-w-[1150px] mx-auto px-3 py-2 sm:py-2.5 flex items-center justify-center text-center">

@@ -88,7 +88,7 @@ export const GuideCarousel: React.FC = () => {
       onTouchEnd={handleTouchEnd}
     >
       {/* Background Subtle Accent */}
-      <div className="absolute inset-0 bg-[#810018]/20 rounded-full blur-[70px] -z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#810018]/20 rounded-full blur-[25px] sm:blur-[70px] -z-10 pointer-events-none" />
 
       {/* Pure Image Display */}
       <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[440px] w-full">
@@ -106,8 +106,8 @@ export const GuideCarousel: React.FC = () => {
               <img
                 src={item.fallback}
                 alt={item.alt}
-                width={340}
-                height={480}
+                width={420}
+                height={594}
                 loading={index === 0 ? 'eager' : 'lazy'}
                 decoding="async"
                 onError={(e) => {
@@ -116,7 +116,7 @@ export const GuideCarousel: React.FC = () => {
                     target.src = item.fallback;
                   }
                 }}
-                className="w-full max-w-[290px] min-[360px]:max-w-[320px] sm:max-w-[340px] h-auto max-h-[460px] object-contain mx-auto rounded-lg shadow-[0_15px_35px_rgba(0,0,0,0.8)] aspect-[340/480]"
+                className="w-full max-w-[290px] min-[360px]:max-w-[320px] sm:max-w-[340px] h-auto max-h-[460px] object-contain mx-auto rounded-lg shadow-[0_15px_35px_rgba(0,0,0,0.8)] aspect-[420/594]"
               />
             </picture>
           </div>

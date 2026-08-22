@@ -32,7 +32,7 @@ export const ConsultationMaterial: React.FC = () => {
         >
           {/* Subtle Ruby Glow inside card */}
           <div 
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[600px] h-[200px] rounded-full blur-[90px] opacity-35 pointer-events-none"
+            className="absolute top-0 left-1/2 -translate-x-1/2 w-[280px] sm:w-[600px] h-[160px] sm:h-[200px] rounded-full blur-[30px] sm:blur-[90px] opacity-35 pointer-events-none"
             style={{ background: 'radial-gradient(circle, #810018 0%, transparent 70%)' }}
           />
 

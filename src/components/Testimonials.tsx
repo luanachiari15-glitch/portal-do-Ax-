@@ -89,7 +89,7 @@ export const Testimonials: React.FC = () => {
     <section className="relative py-16 md:py-24 bg-[#050101] text-center border-t border-[#D4A43E]/20 overflow-hidden">
       {/* Background Subtle Accent */}
       <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[140px] opacity-20 pointer-events-none -z-10"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[250px] sm:h-[400px] rounded-full blur-[35px] sm:blur-[90px] md:blur-[140px] opacity-20 pointer-events-none -z-10"
         style={{ background: 'radial-gradient(circle, #810018 0%, transparent 70%)' }}
       />
 
@@ -138,8 +138,8 @@ export const Testimonials: React.FC = () => {
                   <img
                     src={item.fallback}
                     alt={item.alt}
-                    width={380}
-                    height={520}
+                    width={420}
+                    height={686}
                     loading={index === 0 ? 'eager' : 'lazy'}
                     decoding="async"
                     onError={(e) => {
@@ -148,7 +148,7 @@ export const Testimonials: React.FC = () => {
                         target.src = item.fallback;
                       }
                     }}
-                    className="w-full max-w-[300px] min-[360px]:max-w-[340px] sm:max-w-[400px] h-auto max-h-[560px] object-contain mx-auto rounded-lg shadow-xl aspect-[380/520]"
+                    className="w-full max-w-[300px] min-[360px]:max-w-[340px] sm:max-w-[400px] h-auto max-h-[560px] object-contain mx-auto rounded-lg shadow-xl aspect-[420/686]"
                   />
                 </picture>
               </div>

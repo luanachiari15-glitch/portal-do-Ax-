@@ -14,7 +14,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
       {/* Background Deep Ruby Gradient Accent */}
       <div 
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] sm:w-[900px] h-[450px] rounded-full blur-[140px] opacity-40 pointer-events-none -z-10"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] sm:w-[650px] md:w-[900px] h-[300px] sm:h-[450px] rounded-full blur-[35px] sm:blur-[90px] md:blur-[140px] opacity-40 pointer-events-none -z-10"
         style={{ background: 'radial-gradient(circle, #810018 0%, #350009 50%, transparent 80%)' }}
       />
 

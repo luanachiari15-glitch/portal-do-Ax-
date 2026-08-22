@@ -70,22 +70,24 @@
   font-weight: 700;
   border: 1px solid #D4A43E;
   box-shadow: 0 4px 25px rgba(199, 0, 40, 0.45), 0 0 15px rgba(212, 164, 62, 0.25), inset 0 1px 1px rgba(255, 235, 180, 0.4);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  contain: paint;
 }
 
 .btn-capsule-ruby::after {
   content: '';
   position: absolute;
   top: 0;
-  left: -120%;
-  width: 70%;
+  left: 0;
+  width: 60%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 235, 170, 0.35), transparent);
-  transform: skewX(-25deg);
+  transform: translate3d(-150%, 0, 0) skewX(-25deg);
   animation: shine 4s infinite ease-in-out;
+  pointer-events: none;
 }
 
 .btn-capsule-ruby:hover {
@@ -106,10 +108,11 @@
   font-weight: 700;
   border: 1px solid #D4A43E;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(212, 164, 62, 0.15);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
   overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  contain: paint;
 }
 
 .btn-capsule-outline:hover {
@@ -120,8 +123,13 @@
 }
 
 @keyframes shine {
-  0% { left: -120%; }
-  35%, 100% { left: 180%; }
+  0% { transform: translate3d(-150%, 0, 0) skewX(-25deg); }
+  35%, 100% { transform: translate3d(250%, 0, 0) skewX(-25deg); }
+}
+
+@keyframes bannerSheen {
+  0% { transform: translate3d(-100%, 0, 0) skewX(-12deg); }
+  40%, 100% { transform: translate3d(200%, 0, 0) skewX(-12deg); }
 }
 
 /* Card presets */
@@ -130,7 +138,7 @@
   border: 1px solid rgba(212, 164, 62, 0.25);
   border-radius: 12px;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px -5px rgba(129, 0, 24, 0.15);
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .axe-card:hover {
@@ -158,4 +166,14 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #810018;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -42,7 +42,7 @@ export const Bonuses: React.FC = () => {
     >
       {/* Background radial glow */}
       <div 
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full blur-[140px] opacity-35 pointer-events-none -z-10"
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[320px] sm:w-[700px] h-[300px] sm:h-[500px] rounded-full blur-[35px] sm:blur-[90px] md:blur-[140px] opacity-35 pointer-events-none -z-10"
         style={{ background: 'radial-gradient(circle, #810018 0%, transparent 75%)' }}
       />
 

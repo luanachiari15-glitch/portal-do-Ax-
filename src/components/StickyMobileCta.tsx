@@ -39,10 +39,10 @@ export const StickyMobileCta: React.FC<StickyMobileCtaProps> = ({ onCtaClick }) 
         <button
           id="sticky-mobile-cta"
           onClick={onCtaClick}
-          className="py-3 px-5 rounded-xl btn-gold font-serif text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer shadow-lg active:scale-95 transition-transform shrink-0"
+          className="py-2.5 px-4 btn-capsule-ruby text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 shrink-0"
         >
-          <Sparkles className="w-4 h-4 text-[#1a080c]" />
-          <span>✨ QUERO ACESSAR O PORTAL</span>
+          <Sparkles className="w-3.5 h-3.5 text-[#FFE89E]" />
+          <span>QUERO ACESSAR</span>
         </button>
       </div>
     </div>

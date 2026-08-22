@@ -40,7 +40,7 @@ export const Offers: React.FC<OffersProps> = ({
     >
       {/* Background radial glow */}
       <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full blur-[160px] opacity-35 pointer-events-none -z-10"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[800px] h-[300px] sm:h-[600px] rounded-full blur-[35px] sm:blur-[90px] md:blur-[160px] opacity-35 pointer-events-none -z-10"
         style={{ background: 'radial-gradient(circle, #810018 0%, #350009 50%, transparent 75%)' }}
       />
 
