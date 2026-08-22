@@ -6,37 +6,37 @@ export const Testimonials: React.FC = () => {
     {
       id: 1,
       webp: '/testimonials/depoimento-1.webp',
-      fallback: 'https://i.ibb.co/Y4RGJW0L/Whats-App-Image-2026-08-21-at-16-31-39.jpg',
+      fallback: '/testimonials/depoimento-1.jpg',
       alt: 'Depoimento 1 - Portal do Axé'
     },
     {
       id: 2,
       webp: '/testimonials/depoimento-2.webp',
-      fallback: 'https://i.ibb.co/j9q8kGbq/Whats-App-Image-2026-08-21-at-19-56-38.jpg',
+      fallback: '/testimonials/depoimento-2.jpg',
       alt: 'Depoimento 2 - Portal do Axé'
     },
     {
       id: 3,
       webp: '/testimonials/depoimento-3.webp',
-      fallback: 'https://i.ibb.co/F4HMY0J6/Whats-App-Image-2026-08-21-at-15-46-42.jpg',
+      fallback: '/testimonials/depoimento-3.jpg',
       alt: 'Depoimento 3 - Portal do Axé'
     },
     {
       id: 4,
       webp: '/testimonials/depoimento-4.webp',
-      fallback: 'https://i.ibb.co/5WW0crZ7/Whats-App-Image-2026-08-21-at-20-26-02.jpg',
+      fallback: '/testimonials/depoimento-4.jpg',
       alt: 'Depoimento 4 - Portal do Axé'
     },
     {
       id: 5,
       webp: '/testimonials/depoimento-5.webp',
-      fallback: 'https://i.ibb.co/ymz5qkSC/Whats-App-Image-2026-08-21-at-18-00-34.jpg',
+      fallback: '/testimonials/depoimento-5.jpg',
       alt: 'Depoimento 5 - Portal do Axé'
     },
     {
       id: 6,
       webp: '/testimonials/depoimento-6.webp',
-      fallback: 'https://i.ibb.co/JWwg7kkK/Whats-App-Image-2026-08-21-at-20-30-48.jpg',
+      fallback: '/testimonials/depoimento-6.jpg',
       alt: 'Depoimento 6 - Portal do Axé'
     }
   ];
@@ -60,6 +60,14 @@ export const Testimonials: React.FC = () => {
     }, 4000);
     return () => clearInterval(timer);
   }, [isPaused, images.length]);
+
+  // Preload all testimonial images in background for instant responsiveness
+  useEffect(() => {
+    images.forEach((imgItem) => {
+      const img = new Image();
+      img.src = imgItem.webp;
+    });
+  }, []);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -119,7 +127,7 @@ export const Testimonials: React.FC = () => {
             {images.map((item, index) => (
               <div
                 key={item.id}
-                className={`transition-opacity duration-500 w-full flex items-center justify-center ${
+                className={`transition-opacity duration-300 w-full flex items-center justify-center ${
                   index === currentIndex ? 'block opacity-100' : 'hidden opacity-0'
                 }`}
               >
@@ -128,10 +136,11 @@ export const Testimonials: React.FC = () => {
                   <img
                     src={item.fallback}
                     alt={item.alt}
+                    width={380}
+                    height={520}
                     loading={index === 0 ? 'eager' : 'lazy'}
                     decoding="async"
-                    referrerPolicy="no-referrer"
-                    className="w-full max-w-[340px] sm:max-w-[400px] h-auto max-h-[560px] object-contain mx-auto rounded-lg shadow-xl"
+                    className="w-full max-w-[340px] sm:max-w-[400px] h-auto max-h-[560px] object-contain mx-auto rounded-lg shadow-xl aspect-[380/520]"
                   />
                 </picture>
               </div>

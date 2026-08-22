@@ -6,31 +6,31 @@ export const GuideCarousel: React.FC = () => {
     {
       id: 1,
       webp: '/guide-preview/preview-1.webp',
-      fallback: 'https://i.ibb.co/217msQt8/3.png',
+      fallback: '/guide-preview/preview-1.jpg',
       alt: 'Página do Guia Portal do Axé 1'
     },
     {
       id: 2,
       webp: '/guide-preview/preview-2.webp',
-      fallback: 'https://i.ibb.co/RGR9r5Yy/6.png',
+      fallback: '/guide-preview/preview-2.jpg',
       alt: 'Página do Guia Portal do Axé 2'
     },
     {
       id: 3,
       webp: '/guide-preview/preview-3.webp',
-      fallback: 'https://i.ibb.co/wZs5FDX6/11.png',
+      fallback: '/guide-preview/preview-3.jpg',
       alt: 'Página do Guia Portal do Axé 3'
     },
     {
       id: 4,
       webp: '/guide-preview/preview-4.webp',
-      fallback: 'https://i.ibb.co/HLjhSHcP/16.png',
+      fallback: '/guide-preview/preview-4.jpg',
       alt: 'Página do Guia Portal do Axé 4'
     },
     {
       id: 5,
       webp: '/guide-preview/preview-5.webp',
-      fallback: 'https://i.ibb.co/DHR5W5bg/34.png',
+      fallback: '/guide-preview/preview-5.jpg',
       alt: 'Página do Guia Portal do Axé 5'
     }
   ];
@@ -71,6 +71,14 @@ export const GuideCarousel: React.FC = () => {
     touchStartX.current = null;
   };
 
+  // Preload all slides in background for instant responsiveness
+  useEffect(() => {
+    slides.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.webp;
+    });
+  }, []);
+
   return (
     <div 
       className="relative w-full max-w-[340px] sm:max-w-[380px] mx-auto"
@@ -87,7 +95,7 @@ export const GuideCarousel: React.FC = () => {
         {slides.map((item, index) => (
           <div
             key={item.id}
-            className={`transition-opacity duration-500 w-full flex items-center justify-center ${
+            className={`transition-opacity duration-300 w-full flex items-center justify-center ${
               index === currentIndex ? 'block opacity-100' : 'hidden opacity-0'
             }`}
           >
@@ -96,10 +104,11 @@ export const GuideCarousel: React.FC = () => {
               <img
                 src={item.fallback}
                 alt={item.alt}
+                width={340}
+                height={480}
                 loading={index === 0 ? 'eager' : 'lazy'}
                 decoding="async"
-                referrerPolicy="no-referrer"
-                className="w-full max-w-[300px] sm:max-w-[340px] h-auto max-h-[460px] object-contain mx-auto rounded-lg shadow-[0_15px_35px_rgba(0,0,0,0.8)]"
+                className="w-full max-w-[300px] sm:max-w-[340px] h-auto max-h-[460px] object-contain mx-auto rounded-lg shadow-[0_15px_35px_rgba(0,0,0,0.8)] aspect-[340/480]"
               />
             </picture>
           </div>
