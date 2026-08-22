@@ -33,13 +33,13 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         </p>
 
         {/* Premium Central Visual Element */}
-        <div className="my-8 flex justify-center items-center">
-          <div className="w-full max-w-[340px] min-[400px]:max-w-[380px] sm:max-w-[460px] md:max-w-[500px] mx-auto">
+        <div className="my-8 flex justify-center items-center bg-transparent">
+          <div className="w-full max-w-[340px] min-[400px]:max-w-[380px] sm:max-w-[460px] md:max-w-[500px] mx-auto bg-transparent">
             <img
-              src="https://i.imgur.com/Ba8F9s6_d.webp?maxwidth=760&fidelity=grand"
+              src="https://i.postimg.cc/mknHry1z/Chat-GPT-Image-22-de-ago-de-2026-18-01-43.png"
               alt="Portal do Axé — perfumes e práticas ritualísticas"
-              width="760"
-              height="694"
+              width="1280"
+              height="1170"
               loading="eager"
               fetchPriority="high"
               decoding="async"
