@@ -15,6 +15,7 @@ import { GuaranteeAndFinalCta } from './components/GuaranteeAndFinalCta';
 import { Footer } from './components/Footer';
 import { DiscountPopupModal } from './components/DiscountPopupModal';
 import { MysticalParticles } from './components/MysticalParticles';
+import { StickyMobileCta } from './components/StickyMobileCta';
 
 export default function App() {
   const [isDiscountPopupOpen, setIsDiscountPopupOpen] = useState(false);
@@ -85,6 +86,9 @@ export default function App() {
 
       {/* RODAPÉ */}
       <Footer />
+
+      {/* BARRA CTA FIXA RESPONSIVA PARA MOBILE */}
+      <StickyMobileCta onCtaClick={scrollToOffers} />
 
       {/* POP-UP DE DESCONTO EXCLUSIVO (OFERTA DE R$ 17,00) */}
       <DiscountPopupModal

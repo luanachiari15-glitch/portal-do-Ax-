@@ -76,21 +76,21 @@ export const GuideCarousel: React.FC = () => {
 
   return (
     <div 
-      className="relative w-full max-w-[340px] sm:max-w-[380px] mx-auto"
+      className="relative w-full max-w-[340px] sm:max-w-[380px] mx-auto select-none touch-pan-y"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
       {/* Background Subtle Accent */}
-      <div className="absolute inset-0 bg-[#810018]/20 rounded-full blur-[25px] sm:blur-[70px] -z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#810018]/20 rounded-full blur-[25px] sm:blur-[70px] -z-10 pointer-events-none transform-gpu" />
 
       {/* Pure Image Display */}
-      <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[440px] w-full">
+      <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[440px] w-full contain-paint">
         {slides.map((item, index) => (
           <div
             key={item.id}
-            className={`transition-opacity duration-300 w-full flex items-center justify-center ${
+            className={`transition-opacity duration-300 w-full flex items-center justify-center will-change-[opacity] ${
               index === currentIndex
                 ? 'relative opacity-100 z-10 pointer-events-auto'
                 : 'absolute inset-0 opacity-0 pointer-events-none z-0'
@@ -114,7 +114,7 @@ export const GuideCarousel: React.FC = () => {
       <button
         onClick={prevSlide}
         aria-label="Página anterior"
-        className="absolute -left-2 sm:-left-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#110305]/95 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer z-20 focus:outline-none"
+        className="absolute -left-2 sm:-left-5 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#110305]/95 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all active:scale-90 cursor-pointer z-20 focus:outline-none"
       >
         <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
@@ -122,19 +122,19 @@ export const GuideCarousel: React.FC = () => {
       <button
         onClick={nextSlide}
         aria-label="Próxima página"
-        className="absolute -right-2 sm:-right-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#110305]/95 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer z-20 focus:outline-none"
+        className="absolute -right-2 sm:-right-5 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#110305]/95 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all active:scale-90 cursor-pointer z-20 focus:outline-none"
       >
         <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
 
       {/* Pagination Indicators */}
-      <div className="flex items-center justify-center gap-1.5 mt-4">
+      <div className="flex items-center justify-center gap-2 mt-4 py-1">
         {slides.map((slide, idx) => (
           <button
             key={slide.id}
             onClick={() => setCurrentIndex(idx)}
             aria-label={`Ir para imagem ${idx + 1}`}
-            className={`transition-all duration-300 rounded-full cursor-pointer ${
+            className={`transition-all duration-300 rounded-full cursor-pointer p-1 -m-1 ${
               currentIndex === idx
                 ? 'w-6 h-1.5 bg-[#D4A43E] shadow-[0_0_8px_rgba(212,164,62,0.8)]'
                 : 'w-1.5 h-1.5 bg-[#B5A39F]/30 hover:bg-[#D4A43E]/60'

@@ -122,18 +122,18 @@ export const Testimonials: React.FC = () => {
 
         {/* Carrossel — APENAS AS FOTOS PURAS E RESPONSIVAS */}
         <div 
-          className="relative max-w-[420px] mx-auto px-3 sm:px-0"
+          className="relative max-w-[420px] mx-auto px-3 sm:px-0 select-none touch-pan-y"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
           {/* Pure Image Display */}
-          <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[460px] w-full">
+          <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[460px] w-full contain-paint">
             {images.map((item, index) => (
               <div
                 key={item.id}
-                className={`transition-opacity duration-300 w-full flex items-center justify-center ${
+                className={`transition-opacity duration-300 w-full flex items-center justify-center will-change-[opacity] ${
                   index === currentIndex
                     ? 'relative opacity-100 z-10 pointer-events-auto'
                     : 'absolute inset-0 opacity-0 pointer-events-none z-0'
@@ -157,7 +157,7 @@ export const Testimonials: React.FC = () => {
           <button
             onClick={prevSlide}
             aria-label="Foto anterior"
-            className="absolute -left-2 sm:-left-7 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-[#110305]/95 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer z-20 focus:outline-none"
+            className="absolute -left-2 sm:-left-7 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#110305]/95 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all active:scale-90 cursor-pointer z-20 focus:outline-none"
           >
             <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
           </button>
@@ -165,19 +165,19 @@ export const Testimonials: React.FC = () => {
           <button
             onClick={nextSlide}
             aria-label="Próxima foto"
-            className="absolute -right-2 sm:-right-7 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-[#110305]/95 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all cursor-pointer z-20 focus:outline-none"
+            className="absolute -right-2 sm:-right-7 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#110305]/95 border border-[#D4A43E]/80 text-[#D4A43E] hover:bg-[#810018] hover:text-white flex items-center justify-center shadow-lg transition-all active:scale-90 cursor-pointer z-20 focus:outline-none"
           >
             <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
           </button>
 
           {/* Pagination Indicators */}
-          <div className="flex items-center justify-center gap-2 mt-6">
+          <div className="flex items-center justify-center gap-2 mt-6 py-1">
             {images.map((img, idx) => (
               <button
                 key={img.id}
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`Ir para foto ${idx + 1}`}
-                className={`transition-all duration-300 rounded-full cursor-pointer ${
+                className={`transition-all duration-300 rounded-full cursor-pointer p-1 -m-1 ${
                   currentIndex === idx
                     ? 'w-7 h-2 bg-[#D4A43E] shadow-[0_0_8px_rgba(212,164,62,0.8)]'
                     : 'w-2 h-2 bg-[#B5A39F]/30 hover:bg-[#D4A43E]/60'
