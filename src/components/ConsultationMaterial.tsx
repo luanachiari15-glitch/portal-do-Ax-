@@ -25,7 +25,7 @@ export const ConsultationMaterial: React.FC = () => {
         
         {/* Big Horizontal Card with Gold Border */}
         <div 
-          className="relative rounded-2xl p-8 sm:p-12 md:p-14 text-center overflow-hidden border border-[#D4A43E]/50 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_25px_rgba(212,164,62,0.2)]"
+          className="relative rounded-2xl p-5 sm:p-10 md:p-14 text-center overflow-hidden border border-[#D4A43E]/50 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_25px_rgba(212,164,62,0.2)]"
           style={{
             background: 'linear-gradient(180deg, #110305 0%, #1a0408 50%, #080102 100%)'
           }}

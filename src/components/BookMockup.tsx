@@ -6,14 +6,14 @@ interface BookMockupProps {
 
 export const BookMockup: React.FC<BookMockupProps> = ({ compact = false }) => {
   return (
-    <div className={`relative flex items-center justify-center ${compact ? 'scale-90 sm:scale-100' : 'scale-95 sm:scale-105 md:scale-115'} transition-transform duration-500`}>
+    <div className={`relative flex items-center justify-center max-w-full overflow-hidden py-2 ${compact ? 'scale-85 sm:scale-100' : 'scale-[0.82] min-[400px]:scale-90 sm:scale-105 md:scale-115'} transition-transform duration-300 transform-gpu`}>
       {/* Ruby ambient glow behind mockup */}
       <div 
-        className="absolute w-[280px] sm:w-[380px] h-[280px] sm:h-[380px] rounded-full blur-[90px] opacity-60 pointer-events-none -z-10"
+        className="absolute w-[240px] sm:w-[380px] h-[240px] sm:h-[380px] rounded-full blur-[70px] sm:blur-[90px] opacity-60 pointer-events-none -z-10"
         style={{ background: 'radial-gradient(circle, #810018 0%, #350009 60%, transparent 80%)' }}
       />
       <div 
-        className="absolute w-[200px] sm:w-[260px] h-[200px] sm:h-[260px] rounded-full blur-[60px] opacity-35 pointer-events-none -z-10"
+        className="absolute w-[180px] sm:w-[260px] h-[180px] sm:h-[260px] rounded-full blur-[50px] sm:blur-[60px] opacity-35 pointer-events-none -z-10"
         style={{ background: 'radial-gradient(circle, #D4A43E 0%, transparent 70%)' }}
       />
 

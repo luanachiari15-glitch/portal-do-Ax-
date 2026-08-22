@@ -63,7 +63,7 @@ export const Bonuses: React.FC = () => {
           {bonusList.map((bonus, idx) => (
             <div
               key={idx}
-              className="axe-card p-6 sm:p-7 flex flex-col justify-between relative border border-[#D4A43E]/35 hover:border-[#D4A43E]/70 transition-all duration-300"
+              className="axe-card p-5 sm:p-7 flex flex-col justify-between relative border border-[#D4A43E]/35 hover:border-[#D4A43E]/70 transition-all duration-300"
               style={{
                 background: 'linear-gradient(180deg, #110305 0%, #1f0409 100%)'
               }}
