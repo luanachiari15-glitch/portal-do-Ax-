@@ -1,5 +1,4 @@
 import React from 'react';
-import { BookMockup } from './BookMockup';
 import { TopGoldenBanner } from './TopGoldenBanner';
 
 interface HeroProps {
@@ -33,9 +32,18 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           Descubra como trabalhar perfumes, ervas, rituais e momentos específicos para intenções de <strong className="text-[#D4A43E] font-semibold border-b border-[#D4A43E]/50 pb-0.5">amor</strong>, <strong className="text-[#D4A43E] font-semibold border-b border-[#D4A43E]/50 pb-0.5">magnetismo</strong>, <strong className="text-[#D4A43E] font-semibold border-b border-[#D4A43E]/50 pb-0.5">dinheiro</strong>, <strong className="text-[#D4A43E] font-semibold border-b border-[#D4A43E]/50 pb-0.5">riqueza</strong> e <strong className="text-[#D4A43E] font-semibold border-b border-[#D4A43E]/50 pb-0.5">sucesso</strong>.
         </p>
 
-        {/* Premium Central Mockup */}
-        <div className="my-8 flex justify-center">
-          <BookMockup />
+        {/* Premium Central Visual Element */}
+        <div className="my-8 flex justify-center items-center">
+          <img
+            src="/hero-transparent.webp"
+            alt="Portal do Axé — perfumes e práticas ritualísticas"
+            width={1312}
+            height={1199}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            className="w-full max-w-[340px] min-[400px]:max-w-[380px] sm:max-w-[440px] md:max-w-[480px] h-auto object-contain mx-auto drop-shadow-[0_15px_35px_rgba(0,0,0,0.85)]"
+          />
         </div>
 
         {/* Curiosidade em itálico */}
