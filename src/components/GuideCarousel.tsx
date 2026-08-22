@@ -5,27 +5,27 @@ export const GuideCarousel: React.FC = () => {
   const slides = [
     {
       id: 1,
-      src: '/guide-preview/preview-1.jpg',
+      src: 'https://i.imgur.com/mWTKfII.jpg',
       alt: 'Página do Guia Portal do Axé 1'
     },
     {
       id: 2,
-      src: '/guide-preview/preview-2.jpg',
+      src: 'https://i.imgur.com/3sHrQwk.jpg',
       alt: 'Página do Guia Portal do Axé 2'
     },
     {
       id: 3,
-      src: '/guide-preview/preview-3.jpg',
+      src: 'https://i.imgur.com/B3FQFRM.jpg',
       alt: 'Página do Guia Portal do Axé 3'
     },
     {
       id: 4,
-      src: '/guide-preview/preview-4.jpg',
+      src: 'https://i.imgur.com/QiLTnOj.jpg',
       alt: 'Página do Guia Portal do Axé 4'
     },
     {
       id: 5,
-      src: '/guide-preview/preview-5.jpg',
+      src: 'https://i.imgur.com/jfTsABJ.jpg',
       alt: 'Página do Guia Portal do Axé 5'
     }
   ];
@@ -103,7 +103,8 @@ export const GuideCarousel: React.FC = () => {
               height={2000}
               loading={index === 0 ? 'eager' : 'lazy'}
               decoding="async"
-              className="w-full max-w-[290px] min-[360px]:max-w-[320px] sm:max-w-[340px] h-auto max-h-[460px] object-contain mx-auto rounded-lg shadow-[0_15px_35px_rgba(0,0,0,0.8)] aspect-[1413/2000]"
+              referrerPolicy="no-referrer"
+              className="block w-full max-w-[290px] min-[360px]:max-w-[320px] sm:max-w-[340px] h-auto max-h-[460px] object-contain mx-auto rounded-lg shadow-[0_15px_35px_rgba(0,0,0,0.8)] aspect-[1413/2000]"
             />
           </div>
         ))}

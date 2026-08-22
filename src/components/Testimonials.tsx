@@ -5,42 +5,42 @@ export const Testimonials: React.FC = () => {
   const images = [
     {
       id: 1,
-      src: '/testimonials/depoimento-1.jpg',
+      src: 'https://i.imgur.com/ntcAFWo.jpg',
       alt: 'Depoimento 1 - Portal do Axé',
-      width: 903,
-      height: 1600
-    },
-    {
-      id: 2,
-      src: '/testimonials/depoimento-2.jpg',
-      alt: 'Depoimento 2 - Portal do Axé',
-      width: 1085,
-      height: 1599
-    },
-    {
-      id: 3,
-      src: '/testimonials/depoimento-3.jpg',
-      alt: 'Depoimento 3 - Portal do Axé',
-      width: 867,
-      height: 1599
-    },
-    {
-      id: 4,
-      src: '/testimonials/depoimento-4.jpg',
-      alt: 'Depoimento 4 - Portal do Axé',
-      width: 999,
-      height: 1599
-    },
-    {
-      id: 5,
-      src: '/testimonials/depoimento-5.jpg',
-      alt: 'Depoimento 5 - Portal do Axé',
       width: 979,
       height: 1599
     },
     {
+      id: 2,
+      src: 'https://i.imgur.com/0nrMs5j.jpg',
+      alt: 'Depoimento 2 - Portal do Axé',
+      width: 867,
+      height: 1599
+    },
+    {
+      id: 3,
+      src: 'https://i.imgur.com/lyM3pEo.jpg',
+      alt: 'Depoimento 3 - Portal do Axé',
+      width: 999,
+      height: 1599
+    },
+    {
+      id: 4,
+      src: 'https://i.imgur.com/UoKjkXT.jpg',
+      alt: 'Depoimento 4 - Portal do Axé',
+      width: 903,
+      height: 1600
+    },
+    {
+      id: 5,
+      src: 'https://i.imgur.com/xf1jkgM.jpg',
+      alt: 'Depoimento 5 - Portal do Axé',
+      width: 1085,
+      height: 1599
+    },
+    {
       id: 6,
-      src: '/testimonials/depoimento-6.jpg',
+      src: 'https://i.imgur.com/S3yOd8K.jpg',
       alt: 'Depoimento 6 - Portal do Axé',
       width: 1599,
       height: 1493
@@ -144,9 +144,10 @@ export const Testimonials: React.FC = () => {
                   alt={item.alt}
                   width={item.width}
                   height={item.height}
-                  loading="lazy"
+                  loading={index === 0 ? 'eager' : 'lazy'}
                   decoding="async"
-                  className="w-full max-w-[300px] min-[360px]:max-w-[340px] sm:max-w-[400px] h-auto max-h-[560px] object-contain mx-auto rounded-lg shadow-xl"
+                  referrerPolicy="no-referrer"
+                  className="block w-full max-w-[300px] min-[360px]:max-w-[340px] sm:max-w-[400px] h-auto max-h-[560px] object-contain mx-auto rounded-lg shadow-xl"
                 />
               </div>
             ))}
