@@ -35,17 +35,20 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         {/* Premium Central Visual Element */}
         <div className="my-8 flex justify-center items-center bg-transparent">
           <div className="w-full max-w-[340px] min-[400px]:max-w-[380px] sm:max-w-[460px] md:max-w-[500px] mx-auto bg-transparent">
-            <img
-              src="https://i.ibb.co/JWLK9Ghz/Chat-GPT-Image-22-de-ago-de-2026-18-01-43.png"
-              alt="Portal do Axé — perfumes e práticas ritualísticas"
-              width="640"
-              height="585"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              referrerPolicy="no-referrer"
-              className="w-full h-auto object-contain mx-auto drop-shadow-[0_15px_35px_rgba(0,0,0,0.85)]"
-            />
+            <picture className="w-full h-auto block">
+              <source media="(max-width: 640px)" srcSet="/hero-mobile.webp" type="image/webp" />
+              <source media="(min-width: 641px)" srcSet="/hero.webp" type="image/webp" />
+              <img
+                src="/hero.webp"
+                alt="Portal do Axé — perfumes e práticas ritualísticas"
+                width="640"
+                height="585"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-auto object-contain mx-auto drop-shadow-[0_15px_35px_rgba(0,0,0,0.85)]"
+              />
+            </picture>
           </div>
         </div>
 
